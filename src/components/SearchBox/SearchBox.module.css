@@ -1,10 +1,12 @@
-.formSearch {
-    margin-left: 20px;
-}
 .searchBox {
     margin: 12px auto;
+    margin-left: 20px;
     display: flex;
     flex-direction:column;
+}
+
+.searchBox p {
+    margin: 0px;
 }
 
 .input {

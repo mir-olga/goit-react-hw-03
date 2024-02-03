@@ -1,19 +1,17 @@
 import css from './SearchBox.module.css';
 
-export const SearchBox = () => {
+export const SearchBox = ({ nameFilter, onChange }) => {
 
 return (
-    <form className={css.formSearch}>
         <div className={css.searchBox}>
-            <label>Name</label>
+            <p>Name</p>
             <input className={css.input}
               type="text" name="username"
-              /*id={}
-              value={}
-              onChange={}*/
+              /*id={}*/
+            value={nameFilter}
+            onChange={evt => onChange(evt.target.value)}
             />
         </div>
-    </form >
 );
 }
 

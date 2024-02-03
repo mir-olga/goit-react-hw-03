@@ -1,5 +1,13 @@
+.formSearch {
+    margin-left: 20px;
+}
 .searchBox {
     margin: 12px auto;
     display: flex;
     flex-direction:column;
+}
+
+.input {
+    height: 26px;
+    width: 350px;
 }

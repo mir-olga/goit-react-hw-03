@@ -33,6 +33,11 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin-left: 20px;
+}
+
+li {
+  list-style-type: none;
 }
 
 button {

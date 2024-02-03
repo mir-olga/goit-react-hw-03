@@ -3,16 +3,19 @@ import css from './SearchBox.module.css';
 export const SearchBox = () => {
 
 return (
-    <form >
+    <form className={css.formSearch}>
         <div className={css.searchBox}>
             <label>Name</label>
-            <input 
-              type="text"
+            <input className={css.input}
+              type="text" name="username"
               /*id={}
               value={}
               onChange={}*/
             />
         </div>
     </form >
-          );
+);
 }
+
+
+  

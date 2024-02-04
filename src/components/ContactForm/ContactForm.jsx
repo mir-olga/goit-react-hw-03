@@ -1,10 +1,10 @@
 import css from './ContactForm.module.css';
 import { useId } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-//import { nanoid } from 'nanoid';
-//import * as Yup from 'yup';
+import { nanoid } from 'nanoid';
+import * as Yup from 'yup';
 
-/*const contactSchema = Yup.object().shape({
+const contactSchema = Yup.object().shape({
   name: Yup.string()
     .required('Required field!')
     .min(3, 'Name must be at least 3 symb long')
@@ -13,7 +13,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
     .required('Required field!')
     .min(7, 'Phone number must be at least 7 symb long')
     .max(15, "Too Long!"),
-});*/
+});
 
 export const ContactForm = ({onAdd }) => {
   const nameFieldId = useId();
@@ -22,13 +22,13 @@ export const ContactForm = ({onAdd }) => {
     return ( 
       <Formik
       initialValues={{
-        name: ' ',
-        number: ' ',
+        name: '',
+        number: '',
       }}
-    // validationSchema={contactSchema}
+    validationSchema={contactSchema}
       onSubmit={(values, actions) => {
         console.log(values);
-        onAdd({ id: Date.now(), ...values });
+        onAdd({ id: nanoid(), ...values });
         actions.resetForm();
       }}
     >
@@ -46,7 +46,7 @@ export const ContactForm = ({onAdd }) => {
         <div className={css.form}>
           <label htmlFor={numberFieldId}>Number</label>
           <Field  type="text" name="number" id={numberFieldId} className={css.input}/>
-          <ErrorMessage  name="number" component="span" />
+          <ErrorMessage  name="number" component="span" className={css.error}/>
         </div>
 
         <button type="submit" className={css.button}>Add contact</button>

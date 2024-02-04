@@ -12,7 +12,7 @@
 
 .input {
     height: 26px;
-    width: 240px;
+    width: 320px;
 }
 
 .button {
@@ -21,4 +21,8 @@
     background-color: aliceblue;
     margin: 5px auto 16px;
     display: block;
+}
+
+.error{
+    color:brown;
 }

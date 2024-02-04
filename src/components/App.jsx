@@ -13,6 +13,19 @@ export const App = () => {
     {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
   ]);
 
+ const addContact = newContact => {
+    setContacts(prevContacts => {
+      return [...prevContacts, newContact];
+    });
+  };
+
+  const deleteContact = contactId => {
+    setContacts(prevContacts => {
+      return prevContacts.filter(contact => contact.id !== contactId);
+    });
+  };
+
+
   const visibleContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(nameFilter.toLowerCase())
   );
@@ -21,9 +34,9 @@ export const App = () => {
     <>
       <div>
         <h1>Phonebook</h1>
-        <ContactForm />
+        <ContactForm onAdd={addContact}/>
         <SearchBox nameFilter={nameFilter} onChange={setNameFilter}/>
-        <ContactList items={visibleContacts}/>
+        <ContactList items={visibleContacts} onDelete={deleteContact}/>
       </div>
     </>
   );

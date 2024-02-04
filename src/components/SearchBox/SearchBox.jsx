@@ -7,7 +7,6 @@ return (
             <p>Name</p>
             <input className={css.input}
               type="text" name="username"
-              /*id={}*/
             value={nameFilter}
             onChange={evt => onChange(evt.target.value)}
             />
